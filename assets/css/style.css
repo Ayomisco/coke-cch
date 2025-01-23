@@ -38,8 +38,8 @@
 
 
 .lanyard-circle {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -71,9 +71,9 @@
 }
 
 .lanyard-circle img {
-    max-width: 80%;
-    max-height: 80%;
-    border-radius: 50%;
+    max-width: 70%;
+    max-height: 70%;
+    /* border-radius: 50%; */
 }
 
 .lanyard-link {
