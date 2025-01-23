@@ -17,19 +17,18 @@
         }
 
         .btn-custom {
-            background-color: #000000;
-            color: #ffffff;
+            
             font-size: 1.2rem;
             padding: 10px 30px;
             border: none;
-            border-radius: 5px;
+            border-radius: 30px;
             transition: all 0.3s ease;
         }
 
-        .btn-custom:hover {
+        /* .btn-custom:hover {
             background-color: #43c256;
             color: #ffffff;
-        }
+        } */
 
         iframe {
             width: 100%;
@@ -81,3 +80,42 @@
     text-decoration: none;
 }
 
+.btn-coke{
+    background-color: #000000;
+        color: #ffffff;
+}
+
+.btn-coke:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.btn-sprite {
+    background-color: black;
+    color: #ffffff;
+}
+
+.btn-sprite:hover {
+    background-color: #fff;
+    color: #0bad22;
+}
+
+.btn-fanta {
+    background-color: black;
+    color: #f9ae00;
+}
+
+.btn-fanta:hover {
+    background-color: #fff;
+    color: #f9ae00;
+}
+
+.btn-schweppes {
+    background-color: black;
+    color: #f9ae00;
+}
+
+.btn-schweppes:hover {
+    background-color: #fff;
+    color: #f9ae00;
+}

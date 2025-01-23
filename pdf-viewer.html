@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #pdf-container {
+            flex: 1;
+            overflow: auto;
+            background: #f5f5f5;
+        }
+
+        #toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        #toolbar button {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+
+        #toolbar button:hover {
+            background: #d32f2f;
+        }
+
+        canvas {
+            display: block;
+            margin: auto;
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="toolbar">
+        <button id="prev">Previous</button>
+        <span>Page: <span id="current-page"></span> / <span id="total-pages"></span></span>
+        <button id="next">Next</button>
+    </div>
+    <div id="pdf-container">
+        <canvas id="pdf-render"></canvas>
+    </div>
+
+    <script>
+        // URL for the PDF file
+        const urlParams = new URLSearchParams(window.location.search);
+        const pdfUrl = urlParams.get('file');
+
+        let pdfDoc = null,
+            pageNum = 1,
+            pageIsRendering = false,
+            pageNumPending = null;
+
+        const scale = 1.5,
+            canvas = document.getElementById('pdf-render'),
+            ctx = canvas.getContext('2d');
+
+        // Render the page
+        const renderPage = (num) => {
+            pageIsRendering = true;
+
+            // Get page
+            pdfDoc.getPage(num).then((page) => {
+                const viewport = page.getViewport({ scale });
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderCtx = {
+                    canvasContext: ctx,
+                    viewport: viewport,
+                };
+
+                page.render(renderCtx).promise.then(() => {
+                    pageIsRendering = false;
+
+                    if (pageNumPending !== null) {
+                        renderPage(pageNumPending);
+                        pageNumPending = null;
+                    }
+                });
+
+                // Update page counters
+                document.getElementById('current-page').textContent = num;
+            });
+        };
+
+        // Check for pages rendering
+        constqueueRenderPage = (num) => {
+                if (pageIsRendering) {
+                    pageNumPending = num;
+                } else {
+                    renderPage(num);
+                }
+            };
+
+            // Show previous page
+            const showPrevPage = () => {
+                if (pageNum <= 1) return;
+                pageNum--;
+                queueRenderPage(pageNum);
+            };
+
+            // Show next page
+            const showNextPage = () => {
+                if (pageNum >= pdfDoc.numPages) return;
+                pageNum++;
+                queueRenderPage(pageNum);
+            };
+
+            // Get Document
+            pdfjsLib.getDocument(pdfUrl).promise.then((pdfDoc_) => {
+                pdfDoc = pdfDoc_;
+
+                document.getElementById('total-pages').textContent = pdfDoc.numPages;
+
+                renderPage(pageNum);
+            });
+
+            // Button events
+            document.getElementById('prev').addEventListener('click', showPrevPage);
+            document.getElementById('next').addEventListener('click', showNextPage);
+        </script>
+    </body>
+    
+    </html>

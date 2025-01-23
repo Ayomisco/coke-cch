@@ -13,7 +13,7 @@
             body {
                 background-color: red;
                 font-family: 'Poppins', sans-serif;
-                background-image: url('assets/img/Web-Landscape_Schweppes.png') !important;
+                background-image: url('assets/img/Web-Landscape_Sprite.png') !important;
                 background-size: contain;
                 background-size: cover;
                 background-position: 0%;
@@ -25,19 +25,39 @@
 
 <body>
     
-    <div class="container m-20" style="margin-top: 30px; margin-bottom: 70px;"><img src="assets/img/Schweppes-Logo.png" sizes="14" width="200px" height="90px" ></div>
+    <div class="container m-20" style="margin-top: 10px; margin-bottom: 60px;"><img src="assets/img/GMM-white.png"
+            sizes="14" width="200px" height="100px"></div>
     <div class="container text-center">
         <!-- <h1 class="title">Select your Lanyard to view Presentation</h1> -->
     
-    <div class="container m-20" style="margin-top: 10px; margin-bottom: 60px;"><img src="assets/img/GMM-white.png" sizes="14"
-            width="200px" height="100px"></div>
 
 
-        <a href="pdf-viewer.html?file=assets/pdf/presentation.pdf" class="btn btn-schweppes btn-custom" >View Presentation</a>
+
+        <h3 style="color: white; margin-top: 30px;" >Click to view Presentation</h3>
+        <div class="col-6 col-md-3 mb-3">
+            <a href="sprite.html" class="lanyard-link ">
+                <div class="lanyard-circle sprite" style="background-color: black;">
+                    <img src="assets/img/Sprite-Logo.png" alt="Sprite Lanyard" class="img-fluid">
+                </div>
+            </a>
+        </div>
+
     </div>
 
     <!-- Modal for PDF Viewer -->
-
+    <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pdfModalLabel">Presentation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe id="pdfViewer" src="" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
