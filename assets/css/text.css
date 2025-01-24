@@ -1,0 +1,45 @@
+@media (min-width: 768px) {
+    .logo {
+        margin-top: 80px;
+        margin-bottom: 60px;
+        width: 270px;
+        height: 100px;
+        /* Set width for medium and large screens */
+    }
+
+}
+
+/* For Extra Large Screens */
+@media (min-width: 1000px) {
+    .logo {
+        margin-top: 0 !important;
+        margin-bottom: 60px;
+        width: 270px;
+        height: 100px;
+        /* Increase the logo size for very large screens */
+    }
+
+
+}
+
+@media (min-width: 1200px) {
+    .logo {
+        margin-top: 0 !important;
+        margin-bottom: 60px;
+        width: 230px;
+        height: 60px;
+        /* Increase the logo size for very large screens */
+    }
+}
+
+@media (min-width: 1280px) {
+    .logo {
+        margin-top: 0 !important;
+        margin-bottom: 60px;
+        width: 260px;
+        height: 100px;
+        /* Increase the logo size for very large screens */
+    }
+
+
+}

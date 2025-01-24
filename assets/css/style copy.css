@@ -11,9 +11,7 @@
         .line{
 
             width: 100%;
-            height: 30px;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            height: 50px;
 
         }
 
@@ -56,12 +54,6 @@
     margin: auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.lanyard-circle img{
-    /* width: 50px;
-    height: 50px; */
-    
 }
 
 .coke{
@@ -149,9 +141,77 @@
 /* For Extra Large Screens */
 @media (min-width: 320px) {
     .logo-img {
+        margin-top: 20px !important;
        
         width: 200x;
         height: 90px;
+        /* Increase the logo size for very large screens */
+    }
+
+
+}
+
+/* For Larger Screens */
+@media (min-width: 768px) {
+    .logo-container {
+        margin-top: 100px;
+            margin-bottom: 60px;
+        /* Set width for medium and large screens */
+    }
+         .logo-img {
+             width: 200px !important;
+             height: 100px !important;
+         }
+}
+
+/* For Extra Large Screens */
+@media (min-width: 1200px) {
+    .logo-container {
+        margin-top: 10px;
+            margin-bottom: 60px;
+        /* Increase the logo size for very large screens */
+    }
+
+        .logo-img {
+            width: 200px !important;
+            height: 70px !important;
+        }
+}
+
+@media (min-width: 768px) {
+    .logo {
+        margin-top: 80px;
+        margin-bottom: 60px;
+        width: 270px;
+        height: 100px;
+        /* Set width for medium and large screens */
+    }
+
+}
+
+/* For Extra Large Screens */
+@media (min-width: 769px) {
+    .logo-img {
+        margin-top: 0 !important;
+        margin-bottom: 60px;
+        width: 270px;
+        height: 100px;
+        /* Increase the logo size for very large screens */
+    }
+
+
+}
+
+
+
+
+
+@media (min-width: 1280px) {
+    .logo {
+        margin-top: 0 !important;
+        margin-bottom: 60px;
+        width: 260px;
+        height: 100px;
         /* Increase the logo size for very large screens */
     }
 
