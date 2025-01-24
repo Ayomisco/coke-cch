@@ -1,5 +1,8 @@
-
-        .container {
+body{
+    height: 100vh;
+}
+ 
+ .container {
             /* height: 50vh; */
             display: flex;
             justify-content: center;
@@ -136,14 +139,19 @@
 }
 
 .logo-container {
-    margin-top: 10px;
-    margin-bottom: 60px;
-    text-align: center;
+    margin-top: 20px;
+    /* margin-bottom: 60px;
+    text-align: center; */
 }
 
 .logo-img{
     width:200px;
      height:90px;
+}
+
+.gmm{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* For Extra Large Screens */
