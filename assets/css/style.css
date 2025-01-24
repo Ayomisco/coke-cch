@@ -182,21 +182,21 @@ body {
 /* Medium mobile devices (e.g., iPhone 5, SE, etc.) */
 @media only screen and (min-width: 481px) and (max-width: 568px) {
     body {
-        height: 7200px !important;
+        height: 700px !important;
     }
 }
 
 /* Large mobile devices (e.g., iPhone 6, 7, 8, X, etc.) */
 @media only screen and (min-width: 569px) and (max-width: 767px) {
     body {
-        height: 730px !important;
+        height: 700px !important;
     }
 }
 
 /* Small tablets (e.g., iPad Mini, etc.) */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     body {
-        height: 760px !important;
+        height: 700px !important;
     }
 }
 
@@ -210,7 +210,7 @@ body {
 /* Small laptops and desktops */
 @media only screen and (min-width: 1280px) and (max-width: 1439px) {
     body {
-        height: 1200px !important;
+        height: 700px !important;
     }
 }
 
