@@ -1,5 +1,5 @@
 body{
-    height: 650px !important;
+    height: 620px !important;
 }
  
  .container {
@@ -150,8 +150,8 @@ body{
 }
 
 .gmm{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* For Extra Large Screens */
