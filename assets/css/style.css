@@ -119,8 +119,8 @@ body{
 }
 
 .btn-fanta {
-    background-color: black;
-    color: #fc4d0e;
+    background-color: blue;
+    color: white;
 }
 
 .btn-fanta:hover {
@@ -164,4 +164,66 @@ body{
     }
 
 
+}
+
+
+/* Default height for smallest screens (e.g., smartwatches) */
+body {
+    height: 300px !important;
+}
+
+/* Small mobile devices (e.g., iPhone 2G, 3G, 4, etc.) */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    body {
+        height: 720px !important;
+    }
+}
+
+/* Medium mobile devices (e.g., iPhone 5, SE, etc.) */
+@media only screen and (min-width: 481px) and (max-width: 568px) {
+    body {
+        height: 780px !important;
+    }
+}
+
+/* Large mobile devices (e.g., iPhone 6, 7, 8, X, etc.) */
+@media only screen and (min-width: 569px) and (max-width: 767px) {
+    body {
+        height: 800px !important;
+    }
+}
+
+/* Small tablets (e.g., iPad Mini, etc.) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    body {
+        height: 900px !important;
+    }
+}
+
+/* Large tablets (e.g., iPad Pro, etc.) */
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+    body {
+        height: 1130px !important;
+    }
+}
+
+/* Small laptops and desktops */
+@media only screen and (min-width: 1280px) and (max-width: 1439px) {
+    body {
+        height: 1200px !important;
+    }
+}
+
+/* Medium laptops and desktops */
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+    body {
+        height: 1200px !important;
+    }
+}
+
+/* Large desktops and monitors */
+@media only screen and (min-width: 1920px) {
+    body {
+        height: 1080px !important;
+    }
 }
