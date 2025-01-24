@@ -1,24 +1,4 @@
 
-        
-
-                /* Small devices (phones, 600px and below) */
-                @media only screen and (max-width: 600px) {
-        body {
-                background-color: none !important;
-                height: 99vh !important;
-            }                }
-        
-                /* Medium devices (tablets, 601px - 1024px) */
-                @media only screen and (min-width: 601px) and (max-width: 1024px) {
-body {
-        background-color: none !important;
-        height: 95vh !important;
-    }                }
-        
-                /* Large devices (laptops/desktops, 1025px and above) */
-                @media only screen and (min-width: 1025px) {
-                    /* Styles for large devices */
-                }
         .container {
             /* height: 50vh; */
             display: flex;
