@@ -133,13 +133,13 @@
 /* For Larger Screens */
 @media (min-width: 768px) {
     .logo-container {
-        margin-top: 10px;
+        margin-top: 100px;
             margin-bottom: 60px;
         /* Set width for medium and large screens */
     }
          .logo-img {
              width: 200px !important;
-             height: 70px !important;
+             height: 100px !important;
          }
 }
 
@@ -157,3 +157,40 @@
         }
 }
 
+@media (min-width: 768px) {
+    .logo {
+        margin-top: 80px;
+        margin-bottom: 60px;
+        width: 270px;
+        height: 100px;
+        /* Set width for medium and large screens */
+    }
+
+}
+
+/* For Extra Large Screens */
+@media (min-width: 769px) {
+    .logo-img {
+        margin-top: 0 !important;
+        margin-bottom: 60px;
+        width: 270px;
+        height: 100px;
+        /* Increase the logo size for very large screens */
+    }
+
+
+}
+
+
+
+@media (min-width: 1280px) {
+    .logo {
+        margin-top: 0 !important;
+        margin-bottom: 60px;
+        width: 260px;
+        height: 100px;
+        /* Increase the logo size for very large screens */
+    }
+
+
+}
