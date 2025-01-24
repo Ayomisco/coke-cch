@@ -1,5 +1,5 @@
 body{
-    height: 680px !important;
+    height:690px !important;
 }
  
  .container {
@@ -151,7 +151,7 @@ body{
 
 .gmm{
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 /* For Extra Large Screens */
@@ -166,11 +166,6 @@ body{
 
 }
 
-
-/* Default height for smallest screens (e.g., smartwatches) */
-body {
-    height: 300px !important;
-}
 
 /* Small mobile devices (e.g., iPhone 2G, 3G, 4, etc.) */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
