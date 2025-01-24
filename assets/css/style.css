@@ -130,6 +130,20 @@
     width:200px;
      height:90px;
 }
+
+/* For Extra Large Screens */
+@media (min-width: 320px) {
+    .logo-img {
+        margin-top: 20px !important;
+       
+        width: 200x;
+        height: 90px;
+        /* Increase the logo size for very large screens */
+    }
+
+
+}
+
 /* For Larger Screens */
 @media (min-width: 768px) {
     .logo-container {
@@ -180,6 +194,8 @@
 
 
 }
+
+
 
 
 
