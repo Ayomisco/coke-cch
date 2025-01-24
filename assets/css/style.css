@@ -182,28 +182,28 @@ body {
 /* Medium mobile devices (e.g., iPhone 5, SE, etc.) */
 @media only screen and (min-width: 481px) and (max-width: 568px) {
     body {
-        height: 780px !important;
+        height: 7200px !important;
     }
 }
 
 /* Large mobile devices (e.g., iPhone 6, 7, 8, X, etc.) */
 @media only screen and (min-width: 569px) and (max-width: 767px) {
     body {
-        height: 800px !important;
+        height: 730px !important;
     }
 }
 
 /* Small tablets (e.g., iPad Mini, etc.) */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     body {
-        height: 900px !important;
+        height: 760px !important;
     }
 }
 
 /* Large tablets (e.g., iPad Pro, etc.) */
 @media only screen and (min-width: 1024px) and (max-width: 1279px) {
     body {
-        height: 1130px !important;
+        height: 830px !important;
     }
 }
 
