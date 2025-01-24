@@ -41,12 +41,18 @@
 </head>
 
 <body>
-    <div class="container">
-        <iframe
-            src="https://drive.google.com/file/d/1jiXp-4Z3g5M2YU-BMR-pukhXxzNrGSm1/preview?usp=sharing&embedded=true"
-            allow="fullscreen"></iframe>
-        <div class="overlay"></div>
-    </div>
+<div id="viewer" style="width: 100%; height: 1000vh;"></div>
+<script type="text/javascript" src="https://cloudpdf.io/viewer.min.js"></script>
+<script>
+    const config = {
+        documentId: '8ea7e1b2-8aa2-474f-975b-41d7ea8d7338',
+        darkMode: true,
+        token: '' //add your server side generated security token or change your document permission to public
+    };
+    CloudPDF(config, document.getElementById('viewer')).then((instance) => {
+
+    });
+</script>
 </body>
 
 </html>
