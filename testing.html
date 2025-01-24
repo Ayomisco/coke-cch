@@ -14,18 +14,39 @@
             display: flex;
         }
 
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
         iframe {
             width: 100%;
             height: 100%;
             border: none;
         }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            /* Adjust based on the button size */
+            height: 40px;
+            /* Adjust based on the button size */
+            background: transparent;
+            z-index: 1;
+        }
     </style>
 </head>
 
 <body>
-    <iframe src="https://drive.google.com/file/d/1jiXp-4Z3g5M2YU-BMR-pukhXxzNrGSm1/preview?usp=sharing&embedded=true"
-        allow="fullscreen">
-    </iframe>
+    <div class="container">
+        <iframe
+            src="https://drive.google.com/file/d/1jiXp-4Z3g5M2YU-BMR-pukhXxzNrGSm1/preview?usp=sharing&embedded=true"
+            allow="fullscreen"></iframe>
+        <div class="overlay"></div>
+    </div>
 </body>
 
 </html>
