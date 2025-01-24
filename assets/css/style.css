@@ -170,21 +170,21 @@ body{
 /* Small mobile devices (e.g., iPhone 2G, 3G, 4, etc.) */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
     body {
-        height: 680px !important;
+        height: 700px !important;
     }
 }
 
 /* Medium mobile devices (e.g., iPhone 5, SE, etc.) */
 @media only screen and (min-width: 481px) and (max-width: 568px) {
     body {
-        height: 690px !important;
+        height: 700px !important;
     }
 }
 
 /* Large mobile devices (e.g., iPhone 6, 7, 8, X, etc.) */
 @media only screen and (min-width: 569px) and (max-width: 767px) {
     body {
-        height: 690px !important;
+        height: 700px !important;
     }
 }
 
