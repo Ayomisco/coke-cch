@@ -21,13 +21,36 @@
             background-repeat: no-repeat;
         }
 
+        .logo{
+            margin-top: 20px; 
+            margin-bottom: 70px;
+        }
+
+        @media (min-width: 768px) {
+    .logo {
+        margin-top: 10px;
+            margin-bottom: 60px;
+        /* Set width for medium and large screens */
+    }
+        
+
+/* For Extra Large Screens */
+@media (min-width: 1200px) {
+    .logo {
+        margin-top: 0 !important;
+            margin-bottom: 60px;
+        /* Increase the logo size for very large screens */
+    }
+
+        
+}
     </style>
 </head>
 
 <body>
     <!-- Logo Section -->
     <div class="container text-center logo-container my-2">
-        <img src="assets/img/HBC-Logo-W.png" alt="GMM Logo" width="230px" height="70px" style="margin-top: 0px; margin-bottom: 70px;">
+        <img src="assets/img/HBC-Logo-W.png" alt="GMM Logo" width="230px" height="70px" class="logo">
     </div>
 
         <div class="container " style="margin-top: 10px; margin-bottom: 10px;"><img src="assets/img/GMM-Blue.png" sizes="14"
