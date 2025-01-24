@@ -119,3 +119,41 @@
     background-color: #fff;
     color: #f9ae00;
 }
+
+.logo-container {
+    margin-top: 10px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.logo-img{
+    width:200px;
+     height:90px;
+}
+/* For Larger Screens */
+@media (min-width: 768px) {
+    .logo-container {
+        margin-top: 10px;
+            margin-bottom: 60px;
+        /* Set width for medium and large screens */
+    }
+         .logo-img {
+             width: 200px !important;
+             height: 70px !important;
+         }
+}
+
+/* For Extra Large Screens */
+@media (min-width: 1200px) {
+    .logo-container {
+        margin-top: 10px;
+            margin-bottom: 60px;
+        /* Increase the logo size for very large screens */
+    }
+
+        .logo-img {
+            width: 200px !important;
+            height: 70px !important;
+        }
+}
+
