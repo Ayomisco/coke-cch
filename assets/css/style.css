@@ -23,7 +23,7 @@ body {
     font-size: 18px !important;
         font-weight: bolder;
         padding: 10px 30px;
-        height: 40px;
+        height: 50px;
 }
 
 .btn-schweppes:hover {
@@ -39,7 +39,7 @@ body {
     font-size: 18px !important;
     font-weight: bolder;
     padding: 10px 30px;
-    height: 40px;
+    height: 50px;
 }
 
 .btn-coke:hover {
@@ -54,7 +54,7 @@ body {
     font-size: 18px !important;
     font-weight: bolder;
     padding: 10px 30px;
-    height: 40px;
+    height: 50px;
 }
 
 .btn-sprite:hover {
@@ -63,13 +63,13 @@ body {
 }
 
 .btn-fanta {
-    background-color: blue;
+    background-color: #2d3092;
     color: white;
     transition: all 0.3s ease;
     font-size: 18px !important;
         font-weight: bolder;
         padding: 10px 30px;
-        height: 40px;
+        height: 50px;
 }
 
 .btn-fanta:hover {
