@@ -1,0 +1,224 @@
+body{
+    height:690px !important;
+}
+ 
+ .container {
+            /* height: 50vh; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* background-color: #ffffff; */
+        }
+
+        .line{
+
+            width: 100%;
+            height: 30px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+        }
+
+        .title {
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-custom {
+            
+            font-size: 1.2rem;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        /* .btn-custom:hover {
+            background-color: #43c256;
+            color: #ffffff;
+        } */
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+
+.lanyard-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.lanyard-circle img{
+    /* width: 50px;
+    height: 50px; */
+    
+}
+
+.coke{
+    background: white ;
+}
+
+.fanta {
+    background: #fc4d0e;
+}
+
+.sprite {
+    background: #0bad22;
+}
+
+.schweppes {
+    background: #fdbe00;
+}
+
+.lanyard-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.lanyard-circle img {
+    max-width: 70%;
+    max-height: 70%;
+    /* border-radius: 50%; */
+}
+
+.lanyard-link {
+    text-decoration: none;
+}
+
+.btn-coke{
+    background-color: #000000;
+        color: #ffffff;
+}
+
+.btn-coke:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.btn-sprite {
+    background-color: black;
+    color: #ffffff;
+}
+
+.btn-sprite:hover {
+    background-color: #fff;
+    color: #0bad22;
+}
+
+.btn-fanta {
+    background-color: blue;
+    color: white;
+}
+
+.btn-fanta:hover {
+    background-color: #fff;
+    color: #fc4d0e;
+}
+
+.btn-schweppes {
+    background-color: black;
+    color: #f9ae00;
+}
+
+.btn-schweppes:hover {
+    background-color: #fff;
+    color: #f9ae00;
+}
+
+.logo-container {
+    margin-top: 20px;
+    /* margin-bottom: 60px;
+    text-align: center; */
+}
+
+.logo-img{
+    width:200px;
+     height:90px;
+}
+
+.gmm{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* For Extra Large Screens */
+@media (min-width: 320px) {
+    .logo-img {
+       
+        width: 200x;
+        height: 90px;
+        /* Increase the logo size for very large screens */
+    }
+
+
+}
+
+
+/* Small mobile devices (e.g., iPhone 2G, 3G, 4, etc.) */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    body {
+        height: 710px !important;
+    }
+}
+
+/* Medium mobile devices (e.g., iPhone 5, SE, etc.) */
+@media only screen and (min-width: 481px) and (max-width: 568px) {
+    body {
+        height: 710px !important;
+    }
+}
+
+/* Large mobile devices (e.g., iPhone 6, 7, 8, X, etc.) */
+@media only screen and (min-width: 569px) and (max-width: 767px) {
+    body {
+        height: 700px !important;
+    }
+}
+
+/* Small tablets (e.g., iPad Mini, etc.) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    body {
+        height: 700px !important;
+    }
+}
+
+/* Large tablets (e.g., iPad Pro, etc.) */
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+    body {
+        height: 830px !important;
+    }
+}
+
+/* Small laptops and desktops */
+@media only screen and (min-width: 1280px) and (max-width: 1439px) {
+    body {
+        height: 700px !important;
+    }
+}
+
+/* Medium laptops and desktops */
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+    body {
+        height: 1200px !important;
+    }
+}
+
+/* Large desktops and monitors */
+@media only screen and (min-width: 1920px) {
+    body {
+        height: 1080px !important;
+    }
+}

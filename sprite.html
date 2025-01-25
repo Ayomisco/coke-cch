@@ -8,61 +8,90 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
- 
-        <style>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('assets/img/Part-2/Web-Landscape-Sprite.png');
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
 
-            
-            body {
-                font-family: 'Poppins', sans-serif;
-                background-image: url('assets/img/Part-2/Web-Landscape-Sprite.png') !important;
-                background-size: cover;
-                background-position: 0%;
-                background-repeat: no-repeat;
-            }
-        </style>
+        .logo-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logo-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .line {
+            display: block;
+            margin: 10px auto;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .gmm {
+            display: block;
+            margin: 20px auto;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            padding: 15px;
+        }
+
+        .text-center {
+            margin-top: 30px;
+        }
+    </style>
 </head>
 
 <body>
-    
-    <div class="container m-20 logo-container" ><img src="assets/img/Sprite-Logo.png" sizes="14" class="logo-img"></div>
-                        <img src="assets/img/Part-2/Web-Landscape_Lines.png" sizes="14" class="line">
-
-    <div class="container text-center">
-        <!-- <h1 class="title">Select your Lanyard to View Market Visit Booklet</h1> -->
-
-    
-    <div class="container m-20" style="margin-top: 10px; margin-bottom: 60px;"><img src="assets/img/GMM-White.png" sizes="14"
-            width="200px" height="100px" class="gmm"></div>
-
-
-        <button class="btn btn-custom btn-sprite" onclick="openPresentation()">View Market Visit Booklet</button>
-    </div>
-
-    <!-- Modal for PDF Viewer -->
-    <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="pdfModalLabel">Presentation</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <iframe id="pdfViewer" src="" allowfullscreen></iframe>
-                </div>
-            </div>
+    <header>
+        <div class="container logo-container">
+            <img src="assets/img/Sprite-Logo.png" alt="Sprite Logo" class="logo-img">
         </div>
-    </div>
+        <img src="assets/img/Part-2/Web-Landscape_Lines.png" alt="Decorative Lines" class="line">
+    </header>
+
+    <main>
+        <div class="container text-center">
+            <!-- Branding Section -->
+            <div class="gmm">
+                <img src="assets/img/GMM-White.png" alt="GMM White Logo" width="200" height="100">
+            </div>
+
+            <!-- Call-to-Action Button -->
+            <button class="btn btn-custom btn-sprite" onclick="openPresentation()">View Market Visit Booklet</button>
+        </div>
+    </main>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function openPresentation() {
-            const pdfUrl = 'presentation.pdf'; // Replace with your PDF file path
-            const viewer = document.getElementById('pdfViewer');
-            viewer.src = pdfUrl;
 
-            const modal = new bootstrap.Modal(document.getElementById('pdfModal'));
-            modal.show();
+    <script>
+        // JavaScript function to handle button click
+        function openPresentation() {
+            window.location.href = 'your-presentation-url.html'; // Replace with actual URL
         }
     </script>
 </body>

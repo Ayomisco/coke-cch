@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive PDF Viewer</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: auto;
+            display: flex;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            /* Adjust based on the button size */
+            height: 40px;
+            /* Adjust based on the button size */
+            background: transparent;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+<div id="viewer" style="width: 100%; height: 100vh;"></div>
+<script type="text/javascript" src="https://cloudpdf.io/viewer.min.js"></script>
+<script>
+    const config = {
+        documentId: '8ea7e1b2-8aa2-474f-975b-41d7ea8d7338',
+        darkMode: true,
+        token: '' //add your server side generated security token or change your document permission to public
+    };
+    CloudPDF(config, document.getElementById('viewer')).then((instance) => {
+
+    });
+</script>
+</body>
+
+</html>

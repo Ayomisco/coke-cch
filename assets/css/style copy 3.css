@@ -1,0 +1,167 @@
+body {
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    height: 30px;
+}
+
+.btn-schweppes {
+    background-color: black;
+    color: #f9ae00;
+}
+
+.btn-schweppes:hover {
+    background-color: #fff;
+    color: #f9ae00;
+}
+
+.logo-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Design Tweaks */
+@media (max-width: 768px) {
+    body {
+        background-position: center top;
+    }
+
+    .btn-custom {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+
+    .logo-img {
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-custom {
+        font-size: 0.9rem;
+        padding: 6px 15px;
+    }
+
+    .logo-img {
+        width: 120px;
+    }
+
+    .line {
+        height: 20px;
+    }
+}
+
+
+iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+
+.lanyard-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    /* Add a background color to ensure contrast */
+}
+
+.lanyard-circle img {
+    max-width: 70%;
+    /* Ensure the image is responsive within the circle */
+    max-height: 70%;
+    object-fit: contain;
+    /* Adjust image scaling to fit within the circle */
+}
+
+.lanyard-circle:hover {
+    transform: scale(1.1);
+    /* Slight zoom effect on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.coke {
+    background: white;
+}
+
+.fanta {
+    background: #fc4d0e;
+}
+
+.sprite {
+    background: #0bad22;
+}
+
+.schweppes {
+    background: #fdbe00;
+}
+
+.lanyard-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.lanyard-circle img {
+    max-width: 70%;
+    max-height: 70%;
+    /* border-radius: 50%; */
+}
+
+.lanyard-link {
+    text-decoration: none;
+}
+
+.btn-coke {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn-coke:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.btn-sprite {
+    background-color: black;
+    color: #ffffff;
+}
+
+.btn-sprite:hover {
+    background-color: #fff;
+    color: #0bad22;
+}
+
+.btn-fanta {
+    background-color: blue;
+    color: white;
+}
+
+.btn-fanta:hover {
+    background-color: #fff;
+    color: #fc4d0e;
+}
+
+.btn-schweppes {
+    background-color: black;
+    color: #f9ae00;
+}
+
+.btn-schweppes:hover {
+    background-color: #fff;
+    color: #f9ae00;
+}
