@@ -13,35 +13,71 @@ body {
  .line {
      width: 100%;
      height: auto;
-     margin-bottom: 30px !important;
-        margin-top: 30px !important;
+     margin-bottom: 20px !important;
  }
 
 .btn-schweppes {
     background-color: black;
     color: #f9ae00;
     transition: all 0.3s ease;
+    font-size: 18px !important;
+        font-weight: bolder;
+        padding: 10px 30px;
+        height: 40px;
 }
 
 .btn-schweppes:hover {
     background-color: #fff;
     color: #f9ae00;
+    
 }
 
 .btn-coke {
     background-color: black;
     color: white;
     transition: all 0.3s ease;
-    font-size: 23px !important;
+    font-size: 18px !important;
     font-weight: bolder;
     padding: 10px 30px;
-    height: 60px;
+    height: 40px;
 }
 
 .btn-coke:hover {
     background-color: #fff;
     color: black;
 }
+
+.btn-sprite {
+    background-color: black;
+    color: white;
+    transition: all 0.3s ease;
+    font-size: 18px !important;
+    font-weight: bolder;
+    padding: 10px 30px;
+    height: 40px;
+}
+
+.btn-sprite:hover {
+    background-color: #fff;
+    color: #0bad22;
+}
+
+.btn-fanta {
+    background-color: blue;
+    color: white;
+    transition: all 0.3s ease;
+    font-size: 18px !important;
+        font-weight: bolder;
+        padding: 10px 30px;
+        height: 40px;
+}
+
+.btn-fanta:hover {
+    background-color: #fff;
+    color: #fc4d0e;
+}
+
+
 .logo-img {
     max-width: 100%;
     height: auto;
@@ -128,49 +164,8 @@ iframe {
     text-decoration: none;
 }
 
-.btn-coke {
-    background-color: #000000;
-    color: #ffffff;
-    transition: all 0.3s ease;
-}
 
-.btn-coke:hover {
-    background-color: #fff;
-    color: #000;
-}
 
-.btn-sprite {
-    background-color: black;
-    color: #ffffff;
-    transition: all 0.3s ease;
-}
-
-.btn-sprite:hover {
-    background-color: #fff;
-    color: #0bad22;
-}
-
-.btn-fanta {
-    background-color: blue;
-    color: white;
-    transition: all 0.3s ease;
-}
-
-.btn-fanta:hover {
-    background-color: #fff;
-    color: #fc4d0e;
-}
-
-.btn-schweppes {
-    background-color: black;
-    color: #f9ae00;
-    transition: all 0.3s ease;
-}
-
-.btn-schweppes:hover {
-    background-color: #fff;
-    color: #f9ae00;
-}
 
 
 /* Responsive Design Tweaks */
