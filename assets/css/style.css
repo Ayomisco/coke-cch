@@ -10,11 +10,12 @@ body {
     align-items: center;
 }
 
-.line {
-    height: 30px;
-    width: 100%;
-    /* Ensures full width */
-}
+ .line {
+     width: 100%;
+     height: auto;
+     margin-bottom: 30px !important;
+        margin-top: 30px !important;
+ }
 
 .btn-schweppes {
     background-color: black;
@@ -27,6 +28,20 @@ body {
     color: #f9ae00;
 }
 
+.btn-coke {
+    background-color: black;
+    color: white;
+    transition: all 0.3s ease;
+    font-size: 23px !important;
+    font-weight: bolder;
+    padding: 10px 30px;
+    height: 60px;
+}
+
+.btn-coke:hover {
+    background-color: #fff;
+    color: black;
+}
 .logo-img {
     max-width: 100%;
     height: auto;
@@ -155,4 +170,34 @@ iframe {
 .btn-schweppes:hover {
     background-color: #fff;
     color: #f9ae00;
+}
+
+
+/* Responsive Design Tweaks */
+@media (max-width: 768px) {
+    body {
+        background-position: center top;
+    }
+
+    .line {
+        height: 20px;
+    }
+
+    body {
+        height: 94vh !important;
+    }
+}
+
+@media (max-width: 480px) {
+   
+    body {
+        height: 94vh !important;
+    }
+}
+
+@media (max-width: 350px) {
+    
+    body {
+        height: 90vh !important;
+    }
 }
