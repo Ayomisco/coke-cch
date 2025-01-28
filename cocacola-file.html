@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GMM Lagos 2025</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="shortcut icon" href="assets/img/HBC-Logo.png" type="image/x-icon">
+
+
+    <style>
+        /* Make the iframe take up the full viewport */
+        .fullscreen-iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Bootstrap container for accessibility -->
+    <div class="container-fluid p-0">
+        <!-- Asynchronous iframe -->
+        <iframe
+            src="https://docs.google.com/presentation/d/e/2PACX-1vQ3DsKqRzv4MlKT0eYBu1P5Nb2QqDOCtlBn5a4RUbEQ7GUUXFBl94BZdCBWr94enA/embed?start=true&loop=false"
+            class="fullscreen-iframe" loading="lazy" allowfullscreen="true" mozallowfullscreen="true"
+            webkitallowfullscreen="true">
+        </iframe>
+    </div>
+
+        <script>
+            // Fade out the loader once the page is fully loaded
+            window.addEventListener('load', () => {
+                const loader = document.getElementById('loader');
+                loader.style.animation = 'fadeOut 1s forwards';
+            });
+        </script>
+        
+        <!-- Loader -->
+        <div id="loader">
+            <div class="spinner"></div>
+        </div>
+
+</body>
+
+</html>

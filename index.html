@@ -134,6 +134,21 @@
 </head>
 
 <body>
+    <script>
+        // Fade out the loader once the page is fully loaded
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.style.animation = 'fadeOut 1s forwards';
+        });
+    </script>
+    
+    <div id="loader">
+        <div class="spinner">
+            <img src="assets/img/HBC-Logo-W.png" alt="NBC Logo">
+        </div>
+    </div>
+
+
     <!-- Logo Section -->
     <div class="container-fluid text-center my-3">
         <img src="assets/img/HBC-Logo-W.png" alt="GMM Logo" class="img-fluid" style="max-width: 300px;">
