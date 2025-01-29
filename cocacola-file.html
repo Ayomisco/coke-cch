@@ -27,7 +27,7 @@
         /* CloudPDF Viewer Styling */
         #viewer {
             width: 100%;
-            height: 90vh;
+            height: 100vh;
             background: #000;
             border: none;
         }
@@ -55,7 +55,7 @@
 
         @media (max-width: 768px) {
             #viewer {
-                height: 80vh;
+                height: 100vh;
             }
 
             .btn {
@@ -78,7 +78,7 @@
     <script>
         const config = {
             documentId: '8ea7e1b2-8aa2-474f-975b-41d7ea8d7338', // Replace with your actual document ID
-            darkMode: true,
+            darkMode: false,
         };
 
         CloudPDF(config, document.getElementById('viewer')).then((instance) => {
