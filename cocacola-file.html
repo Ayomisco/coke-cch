@@ -67,15 +67,11 @@
 </head>
 
 <body>
-    <h2>GMM Lagos 2025 Presentation</h2>
 
     <!-- CloudPDF Viewer -->
     <div id="viewer"></div>
 
-    <!-- Fullscreen Button -->
-    <div class="controls">
-        <button class="btn" id="fullscreen">🔳 Fullscreen</button>
-    </div>
+
 
     <!-- CloudPDF Script -->
     <script type="text/javascript" src="https://cloudpdf.io/viewer.min.js"></script>
@@ -89,19 +85,7 @@
             console.log("CloudPDF Loaded");
         });
 
-        // Fullscreen functionality
-        document.getElementById("fullscreen").addEventListener("click", () => {
-            const viewer = document.getElementById("viewer");
-            if (viewer.requestFullscreen) {
-                viewer.requestFullscreen();
-            } else if (viewer.mozRequestFullScreen) {
-                viewer.mozRequestFullScreen();
-            } else if (viewer.webkitRequestFullscreen) {
-                viewer.webkitRequestFullscreen();
-            } else if (viewer.msRequestFullscreen) {
-                viewer.msRequestFullscreen();
-            }
-        });
+    
     </script>
 </body>
 
