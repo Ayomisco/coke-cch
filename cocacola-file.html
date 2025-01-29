@@ -4,153 +4,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GMM Lagos 2025</title>
+    <title>GMM Lagos 2025 - Presentation</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/img/HBC-Logo.png" type="image/x-icon">
 
+    <!-- PDF.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
     <style>
-        /* Make the iframe take up the full viewport */
-        .fullscreen-iframe {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
+        body {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
         }
 
-        /* Loader styling */
-        #loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
+        .pdf-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 9999;
+            width: 100%;
+            height: 90vh;
         }
 
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #007bff;
-            border-top: 5px solid transparent;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        canvas {
+            width: 95%;
+            height: auto;
+            max-width: 100vw;
+            max-height: 90vh;
+            display: block;
+            transition: transform 0.3s ease-in-out;
         }
 
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Navigation controls */
         .controls {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
             display: flex;
+            justify-content: center;
             gap: 15px;
-            z-index: 1000;
+            position: fixed;
+            bottom: 15px;
+            width: 100%;
         }
 
-        .btn-control {
-            background: rgba(0, 123, 255, 0.8);
-            color: white;
+        .btn {
+            background-color: red;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 15px;
             font-size: 16px;
-            border-radius: 5px;
+            color: white;
             cursor: pointer;
-            transition: 0.3s;
+            border-radius: 5px;
+            flex-grow: 1;
+            max-width: 120px;
         }
 
-        .btn-control:hover {
-            background: rgba(0, 123, 255, 1);
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .pdf-container {
+                height: 85vh;
+            }
+
+            .controls {
+                bottom: 5px;
+            }
+
+            .btn {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 
 <body>
+    <h2>GMM Lagos 2025 Presentation</h2>
 
-    <!-- Loader -->
-    <div id="loader">
-        <div class="spinner"></div>
+    <div class="pdf-container">
+        <canvas id="pdf-render"></canvas>
     </div>
 
-    <!-- Bootstrap container for accessibility -->
-    <div class="container-fluid p-0">
-        <!-- Asynchronous iframe -->
-        <iframe id="presentation"
-            src="https://docs.google.com/presentation/d/e/2PACX-1vQ3DsKqRzv4MlKT0eYBu1P5Nb2QqDOCtlBn5a4RUbEQ7GUUXFBl94BZdCBWr94enA/embed?start=false&loop=false"
-            class="fullscreen-iframe" loading="lazy" allowfullscreen="true" mozallowfullscreen="true"
-            webkitallowfullscreen="true">
-        </iframe>
-    </div>
-
-    <!-- Navigation & Fullscreen Controls -->
     <div class="controls">
-        <button class="btn-control" onclick="prevSlide()">⬅ Previous</button>
-        <button class="btn-control" onclick="nextSlide()">Next ➡</button>
-        <button class="btn-control" onclick="toggleFullscreen()">🔄 Fullscreen</button>
+        <button class="btn btn-danger" id="prev">⏪ Prev</button>
+        <span id="page-info"></span>
+        <button class="btn btn-danger" id="next">Next ⏩</button>
+        <button class="btn btn-danger" id="fullscreen">🔳 Fullscreen</button>
     </div>
 
     <script>
-        // Remove loader after page fully loads
-        window.addEventListener('load', () => {
-            document.getElementById('loader').style.display = 'none';
+        const url = "present.pdf"; // Update with actual PDF path
+
+        let pdfDoc = null,
+            pageNum = 1,
+            pageIsRendering = false,
+            pageNumIsPending = null;
+
+        const canvas = document.getElementById("pdf-render"),
+            ctx = canvas.getContext("2d");
+
+        function getResponsiveScale(viewport) {
+            const containerWidth = document.querySelector(".pdf-container").clientWidth;
+            return containerWidth / viewport.width;
+        }
+
+        const renderPage = num => {
+            pageIsRendering = true;
+            pdfDoc.getPage(num).then(page => {
+                let viewport = page.getViewport({ scale: 1 });
+                let scale = getResponsiveScale(viewport);
+                viewport = page.getViewport({ scale });
+
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+
+                const renderTask = page.render(renderContext);
+                renderTask.promise.then(() => {
+                    pageIsRendering = false;
+                    if (pageNumIsPending !== null) {
+                        renderPage(pageNumIsPending);
+                        pageNumIsPending = null;
+                    }
+                });
+            });
+
+            document.getElementById("page-info").textContent = `Page ${num} of ${pdfDoc.numPages}`;
+        };
+
+        const queueRenderPage = num => {
+            if (pageIsRendering) {
+                pageNumIsPending = num;
+            } else {
+                renderPage(num);
+            }
+        };
+
+        document.getElementById("prev").addEventListener("click", () => {
+            if (pageNum <= 1) return;
+            pageNum--;
+            queueRenderPage(pageNum);
         });
 
-        // Navigation functions for slides
-        function nextSlide() {
-            document.getElementById('presentation').contentWindow.postMessage(JSON.stringify({
-                event: "command",
-                func: "next",
-                args: []
-            }), "*");
-        }
+        document.getElementById("next").addEventListener("click", () => {
+            if (pageNum >= pdfDoc.numPages) return;
+            pageNum++;
+            queueRenderPage(pageNum);
+        });
 
-        function prevSlide() {
-            document.getElementById('presentation').contentWindow.postMessage(JSON.stringify({
-                event: "command",
-                func: "prev",
-                args: []
-            }), "*");
-        }
-
-        // Fullscreen toggle function
-        function toggleFullscreen() {
-            let iframe = document.getElementById('presentation');
-            if (!document.fullscreenElement) {
-                if (iframe.requestFullscreen) {
-                    iframe.requestFullscreen();
-                } else if (iframe.mozRequestFullScreen) { // Firefox
-                    iframe.mozRequestFullScreen();
-                } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari
-                    iframe.webkitRequestFullscreen();
-                } else if (iframe.msRequestFullscreen) { // IE/Edge
-                    iframe.msRequestFullscreen();
-                }
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                }
+        document.getElementById("fullscreen").addEventListener("click", () => {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) {
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) {
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) {
+                document.documentElement.msRequestFullscreen();
             }
-        }
-    </script>
+        });
 
+        pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+            pdfDoc = pdfDoc_;
+            renderPage(pageNum);
+        });
+
+        window.addEventListener("resize", () => queueRenderPage(pageNum));
+
+        // Keyboard Controls
+        document.addEventListener("keydown", event => {
+            if (event.key === "ArrowRight" && pageNum < pdfDoc.numPages) {
+                pageNum++;
+                queueRenderPage(pageNum);
+            }
+            if (event.key === "ArrowLeft" && pageNum > 1) {
+                pageNum--;
+                queueRenderPage(pageNum);
+            }
+        });
+    </script>
 </body>
 
 </html>
